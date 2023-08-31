@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class charController : MonoBehaviour
 {
-    public float speed = 0.02f;//プレイヤーの移動速度
+    public float speed = 2f;//プレイヤーの移動速度
     Rigidbody2D rigid2D; //重力
     float jumpForce = 600.0f;//ジャンプ力
-    int cooldown = 800;//ジャンプしたときにおこるクールダウンタイム
+    int cooldown = 30;//ジャンプしたときにおこるクールダウンタイム
 
 
     void Start()
@@ -26,7 +26,7 @@ public class charController : MonoBehaviour
 
         //ジャンプする
         //クールダウンタイム追加
-        if (cooldown > 800)
+        if (cooldown > 30)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -44,12 +44,12 @@ public class charController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))//dキーを入力した場合
         {
-            position.x += speed / 5;
+            position.x += speed ;
         }
 
         if (Input.GetKey(KeyCode.A))//aキーを入力した場合
         {
-            position.x -= speed / 5;//左方向に進む
+            position.x -= speed;//左方向に進む
         }
 
         //スピード制限
