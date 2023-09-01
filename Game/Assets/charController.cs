@@ -56,6 +56,11 @@ public class charController : MonoBehaviour
 
         transform.position = position;
 
+        if(Input.GetKey(KeyCode.Escape)) 
+        {
+            SceneManager.LoadScene("TitleScene");
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
