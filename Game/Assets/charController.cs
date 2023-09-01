@@ -10,7 +10,8 @@ public class charController : MonoBehaviour
     public float speed = 2f;//プレイヤーの移動速度
     Rigidbody2D rigid2D; //重力
     float jumpForce = 600.0f;//ジャンプ力
-    int cooldown = 30;//ジャンプしたときにおこるクールダウンタイム
+    int cooldown = 65;//ジャンプしたときにおこるクールダウンタイム
+   
 
 
     void Start()
@@ -26,7 +27,7 @@ public class charController : MonoBehaviour
 
         //ジャンプする
         //クールダウンタイム追加
-        if (cooldown > 30)
+        if (cooldown > 60)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
