@@ -10,6 +10,7 @@ TagManager:
   - pipe1
   - pipe2
   - Ground
+  - Cloud
   layers:
   - Default
   - TransparentFX
