@@ -16,17 +16,17 @@ public class jinarasi : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 position = transform.position; //enemyの場所
-        decision decision;//decisionのクラスをdecisionに代入
+        jinarasidecision decision;//decisionのクラスをdecisionに代入
         GameObject obj = GameObject.Find("decision4"); //objの中にdecisionを代入
-        decision = obj.GetComponent<decision>();
-        decision decision2;//decisionのクラスの中身をdecision2に代入
+        decision = obj.GetComponent<jinarasidecision>();
+        jinarasidecision decision2;//decisionのクラスの中身をdecision2に代入
         GameObject obb = GameObject.Find("decision6");//obbの中にdecisionを代入
-        decision2 =obb.GetComponent<decision>();
+        decision2 =obb.GetComponent<jinarasidecision>();
 
 
-        if (decision.isdecision //decisionの中身がtrueの時か
+        if (decision.isHit //decisionの中身がtrueの時か
             || 
-            decision2.isdecision)//decisionの中身がtrueの時に実行される
+            decision2.isHit)//decisionの中身がtrueの時に実行される
         {
             position.x -= speed;　//x方向にspeedで移動していく
         }

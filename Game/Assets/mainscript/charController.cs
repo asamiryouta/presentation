@@ -11,12 +11,13 @@ public class charController : MonoBehaviour
     Rigidbody2D rigid2D; //重力
     float jumpForce = 600.0f;//ジャンプ力
     int cooldown = 65;//ジャンプしたときにおこるクールダウンタイム
-   
+    public float volume;
 
 
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
+        AudioListener.volume= volume;
     }
 
     //キーを押すと、プレイヤーが移動する
@@ -32,6 +33,7 @@ public class charController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 this.rigid2D.AddForce(transform.up * this.jumpForce);
+                GetComponent<AudioSource>().Play();
                 cooldown = 0;
             }
         }
